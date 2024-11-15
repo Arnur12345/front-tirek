@@ -1,0 +1,122 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #283618, #606c38);
+  color: #fefae0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+  animation: spin 30s linear infinite;
+  z-index: 1;
+}
+
+.home-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  z-index: 1;
+}
+
+.home-title {
+  font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  z-index: 2;
+  animation: fade-in 1.5s ease-out;
+}
+
+.home-subtitle {
+  font-size: 1.8rem;
+  color: #d9d9d9;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+  z-index: 2;
+  font-family: 'Roboto', sans-serif;
+  animation: fade-in 2s ease-out;
+}
+
+.button-container {
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.home-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fefae0;
+  background: linear-gradient(90deg, #606c38, #283618);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  background-color: #a7c957;
+}
+
+.home-button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #556b2f;
+}
+
+@media (max-width: 768px) {
+  .home-title {
+      font-size: 3rem;
+  }
+  
+  .home-subtitle {
+      font-size: 1.5rem;
+  }
+
+  .home-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

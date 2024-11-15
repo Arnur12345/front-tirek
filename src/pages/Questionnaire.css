@@ -1,0 +1,30 @@
+/* src/pages/Questionnaire.css */
+.questionnaire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+  }
+  
+  .questionnaire-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .questionnaire-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .questionnaire-title {
+      font-size: 1.5rem;
+    }
+  }
+  
